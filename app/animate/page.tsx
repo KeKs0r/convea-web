@@ -1,16 +1,10 @@
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Mail,
-  ShoppingCart,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { TrendingUp } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { FlowDiagram } from "@/components/landing/flow-diagram";
+
 import {
   ActivityIcon,
   CheckCircleIcon,
@@ -19,6 +13,8 @@ import {
   DollarSignIcon,
   ZapIcon,
 } from "lucide-react";
+import { Mail, ShoppingCart, Sparkles } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -44,79 +40,53 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-100/30 via-transparent to-transparent"></div>
-        <div className="absolute -left-32 -top-32 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-purple-300/30 to-pink-300/30 blur-3xl"></div>
-        <div className="absolute -right-32 top-0 h-[400px] w-[400px] rounded-full bg-gradient-to-br from-blue-300/30 to-purple-300/30 blur-3xl"></div>
+      {/* Enhanced Hero Section with Interactive Flow */}
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/30 via-transparent to-transparent"></div>
+        </div>
 
-        <div className="container relative mx-auto px-6 pt-24">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
-              <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                Increase your
-                <br />
-                Klaviyo revenue
-              </span>
-            </h1>
-            <p className="mx-auto mt-8 max-w-xl text-xl text-gray-600">
-              Deploy intelligent email flows that boost your revenue by 25% with
-              zero development effort
-            </p>
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <Button
-                size="lg"
-                className="rounded-full bg-black text-white hover:bg-gray-800"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full">
-                See How It Works
-              </Button>
+        <div className="container relative mx-auto px-6">
+          <div className="grid min-h-[calc(100vh-5rem)] items-center lg:grid-cols-2">
+            <div className="relative z-10 space-y-8 pt-24 lg:pt-0">
+              <div className="space-y-4">
+                <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+                  <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                    Increase your
+                    <br />
+                    Klaviyo revenue
+                  </span>
+                </h1>
+                <p className="max-w-xl text-xl text-gray-600">
+                  Our AI automatically processes customer events and creates
+                  personalized email flows that boost your revenue by 25%
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Button
+                  size="lg"
+                  className="rounded-full bg-black text-white hover:bg-gray-800"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full">
+                  See How It Works
+                </Button>
+              </div>
+            </div>
+
+            <div className="absolute right-0 top-0 h-full w-full lg:relative">
+              <FlowDiagram />
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Flow Diagram Section */}
-      <section className="container mx-auto px-6 py-24">
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-100/30 to-transparent"></div>
-          <Card className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border-0 bg-gradient-to-br from-white to-gray-50/50 p-8 shadow-xl backdrop-blur-sm">
-            <div className="mb-8 flex items-center justify-between">
-              <div>
-                <h2 className="mb-1 text-2xl font-bold">
-                  Smart Flow Architecture
-                </h2>
-                <p className="text-gray-600">
-                  Automated intelligence for your email campaigns
-                </p>
-              </div>
-            </div>
-            <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl bg-white p-12">
-              <Image
-                src="/flow.svg"
-                alt="Smart Flow Diagram"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-            <div className="mt-8 flex items-center justify-center gap-6">
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span className="text-sm text-gray-600">Active Flows</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                <span className="text-sm text-gray-600">AI Optimization</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                <span className="text-sm text-gray-600">Revenue Tracking</span>
-              </div>
-            </div>
-          </Card>
+        <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center space-y-4">
+          <p className="text-sm font-medium text-gray-600">
+            Scroll to discover
+          </p>
+          <div className="h-12 w-[1px] animate-bounce bg-gradient-to-b from-gray-600 to-transparent"></div>
         </div>
       </section>
 
@@ -129,25 +99,26 @@ export default function Home() {
               What if this would take you 5 minutes instead of weeks?
             </h2>
             <div className="grid gap-8 lg:grid-cols-2">
-              <Card className="relative overflow-hidden rounded-3xl border-0">
-                <div className="group relative aspect-[16/9] w-full overflow-hidden">
-                  <Image
-                    src="/klaviyo-flow-overload-2.png"
-                    alt="Complex Flow"
-                    fill
-                    className="scale-100 transform object-cover brightness-110 transition-all duration-500 group-hover:scale-110 group-hover:blur-none"
-                  />
-                  <div className="absolute inset-0 bg-white/80 transition-opacity duration-500 group-hover:opacity-60"></div>
+              <Card className="relative overflow-hidden rounded-3xl border-0 bg-black text-white">
+                <div className="group aspect-[16/9] w-full overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-q2H8TYxm3zXAjum8zyxzQyYas0jFAA.png"
+                      alt="Complex Flow"
+                      fill
+                      className="scale-90 transform object-contain opacity-25 transition-all duration-500 group-hover:scale-100 group-hover:opacity-40"
+                    />
+                  </div>
                   <div className="absolute inset-0 flex items-center justify-center p-6">
                     <div className="text-center">
-                      <h3 className="mb-4 text-2xl font-bold text-black">
+                      <h3 className="mb-4 text-2xl font-bold">
                         Traditional Setup
                       </h3>
-                      <p className="mb-4 text-lg text-gray-700">
+                      <p className="mb-4 text-lg text-gray-300">
                         Requires weeks of work with expensive consultants to
                         achieve sophisticated automation
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <ul className="space-y-2 text-sm text-gray-400">
                         <li className="flex items-center justify-center">
                           <ClockIcon className="mr-2 h-4 w-4" />
                           Weeks of setup time

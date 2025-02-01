@@ -162,13 +162,13 @@ export function FlowDiagram() {
 }
 
 export class Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  hue: number;
-  alpha: number;
+  x?: number;
+  y?: number;
+  size?: number;
+  speedX?: number;
+  speedY?: number;
+  hue?: number;
+  alpha?: number;
   path: number;
   isOutput: boolean;
   canvas: HTMLCanvasElement;
@@ -208,6 +208,16 @@ export class Particle {
   }
 
   update() {
+    // Early return if any required properties are undefined
+    if (
+      this.x === undefined ||
+      this.y === undefined ||
+      this.speedX === undefined ||
+      this.speedY === undefined
+    ) {
+      return;
+    }
+
     if (!this.isOutput) {
       // Input particles move down towards center
       this.y += this.speedY;
@@ -226,6 +236,14 @@ export class Particle {
   }
 
   draw() {
+    // Early return if x, y coordinates or size are undefined
+    if (
+      this.x === undefined ||
+      this.y === undefined ||
+      this.size === undefined
+    ) {
+      return;
+    }
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     this.ctx.fillStyle = `hsla(${this.hue}, 70%, 50%, ${this.alpha})`;

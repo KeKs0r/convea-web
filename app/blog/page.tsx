@@ -1,24 +1,25 @@
-import ArticleCard from '@/components/ArticleCard';
-import Pagination from '@/components/Pagination';
-import { type Metadata } from 'next';
-import { BlogClient } from 'seobot';
+import ArticleCard from "@/components/ArticleCard";
+import Pagination from "@/components/Pagination";
+import { type Metadata } from "next";
+import { BlogClient } from "seobot";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'SeoBot Blog';
-  const description = 'Get the inside scoop on SeoBot - the AI-powered SEO solution for content creation, optimization, and automated traffic growth on Autopilot.';
+  const title = "SeoBot Blog";
+  const description =
+    "Get the inside scoop on SeoBot - the AI-powered SEO solution for content creation, optimization, and automated traffic growth on Autopilot.";
   return {
     title,
     description,
-    metadataBase: new URL('https://seobotai.com'),
+    metadataBase: new URL("https://seobotai.com"),
     alternates: {
-      canonical: '/blog',
+      canonical: "/blog",
     },
     openGraph: {
-      type: 'website',
+      type: "website",
       title,
       description,
       // images: [],
-      url: 'https://seobotai.com/blog',
+      url: "https://seobotai.com/blog",
     },
     twitter: {
       title,
@@ -31,16 +32,21 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function getPosts(page: number) {
   const key = process.env.SEOBOT_API_KEY;
-  if (!key) throw Error('SEOBOT_API_KEY enviroment variable must be set. You can use the DEMO key a8c58738-7b98-4597-b20a-0bb1c2fe5772 for testing - please set it in the root .env.local file');
+  if (!key)
+    throw Error(
+      "SEOBOT_API_KEY enviroment variable must be set. You can use the DEMO key a8c58738-7b98-4597-b20a-0bb1c2fe5772 for testing - please set it in the root .env.local file"
+    );
 
   const client = new BlogClient(key);
   return client.getArticles(page, 10);
 }
 
-export const fetchCache = 'force-no-store';
+export const fetchCache = "force-no-store";
 
-export default async function Blog({ searchParams: { page } }: { searchParams: { page: number } }) {
-  const pageNumber = Math.max((page || 0) - 1, 0);
+export default async function Blog(props: {
+  searchParams: Promise<{ page: number }>;
+}) {
+  const pageNumber = Math.max((await props.searchParams).page || 0, 0);
   const { total, articles } = await getPosts(pageNumber);
   const posts = articles || [];
   const lastPage = Math.ceil(total / 10);
@@ -53,7 +59,9 @@ export default async function Blog({ searchParams: { page } }: { searchParams: {
           <ArticleCard key={article.id} article={article} />
         ))}
       </ul>
-      {lastPage > 1 && <Pagination slug="/blog" pageNumber={pageNumber} lastPage={lastPage} />}
+      {lastPage > 1 && (
+        <Pagination slug="/blog" pageNumber={pageNumber} lastPage={lastPage} />
+      )}
     </section>
   );
 }

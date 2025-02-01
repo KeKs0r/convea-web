@@ -52,8 +52,8 @@ export default function FeaturesSection() {
           Intelligent flows for every scenario
         </h2>
         <p className="text-xl text-gray-600">
-          Our AI-powered flows automatically adapt to your customers' behavior,
-          maximizing engagement and revenue at every touchpoint
+          Our AI-powered flows automatically adapt to your customers&apos;
+          behavior, maximizing engagement and revenue at every touchpoint
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

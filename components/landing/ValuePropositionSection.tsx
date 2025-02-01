@@ -19,26 +19,25 @@ export default function ValuePropositionSection() {
             What if this would take you 5 minutes instead of weeks?
           </h2>
           <div className="grid gap-8 lg:grid-cols-2">
-            <Card className="relative overflow-hidden rounded-3xl border-0 bg-black text-white">
-              <div className="group aspect-[16/9] w-full overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black">
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-q2H8TYxm3zXAjum8zyxzQyYas0jFAA.png"
-                    alt="Complex Flow"
-                    fill
-                    className="scale-90 transform object-contain opacity-25 transition-all duration-500 group-hover:scale-100 group-hover:opacity-40"
-                  />
-                </div>
+            <Card className="relative overflow-hidden rounded-3xl border-0">
+              <div className="group relative aspect-[16/9] w-full overflow-hidden">
+                <Image
+                  src="/klaviyo-flow-overload-2.png"
+                  alt="Complex Flow"
+                  fill
+                  className="scale-100 transform object-cover brightness-110 transition-all duration-500 group-hover:scale-110 group-hover:blur-none"
+                />
+                <div className="absolute inset-0 bg-white/80 transition-opacity duration-500 group-hover:opacity-60"></div>
                 <div className="absolute inset-0 flex items-center justify-center p-6">
                   <div className="text-center">
-                    <h3 className="mb-4 text-2xl font-bold">
+                    <h3 className="mb-4 text-2xl font-bold text-black">
                       Traditional Setup
                     </h3>
-                    <p className="mb-4 text-lg text-gray-300">
+                    <p className="mb-4 text-lg text-gray-700">
                       Requires weeks of work with expensive consultants to
                       achieve sophisticated automation
                     </p>
-                    <ul className="space-y-2 text-sm text-gray-400">
+                    <ul className="space-y-2 text-sm text-gray-600">
                       <li className="flex items-center justify-center">
                         <ClockIcon className="mr-2 h-4 w-4" />
                         Weeks of setup time

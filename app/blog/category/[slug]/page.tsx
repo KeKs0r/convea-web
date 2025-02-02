@@ -93,8 +93,8 @@ export default async function Category({
       {lastPage > 1 && (
         <Pagination
           slug={`/blog/category/${slug}`}
-          pageNumber={pageNumber}
-          lastPage={lastPage}
+          currentPage={pageNumber}
+          totalPages={lastPage}
         />
       )}
     </section>

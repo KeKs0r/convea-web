@@ -88,7 +88,11 @@ export default async function Blog(props: {
               </div>
             </section>
           </div>
-          <Pagination currentPage={currentPage + 1} totalPages={totalPages} />
+          <Pagination
+            currentPage={currentPage + 1}
+            totalPages={totalPages}
+            slug="/blog"
+          />
         </main>
         <Footer />
       </div>

@@ -45,7 +45,7 @@ export default function EnterpriseSuccessSection() {
             <div className="flex items-center justify-center">
               <div className="relative h-12 w-32">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/staples-seeklogo-Xjqj78A2szQCZHCT6iFmxGPtYUaU1J.svg"
+                  src="/logos/staples-logo.svg"
                   alt="Staples"
                   fill
                   className="object-contain brightness-0 invert"
@@ -55,7 +55,7 @@ export default function EnterpriseSuccessSection() {
             <div className="flex items-center justify-center">
               <div className="relative h-12 w-32">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macys-seeklogo-s7ayR4SlT0D9Adfq2MtRyp66NPyKhj.svg"
+                  src="/logos/macys-logo.svg"
                   alt="Macy's"
                   fill
                   className="object-contain brightness-0 invert"
@@ -65,7 +65,7 @@ export default function EnterpriseSuccessSection() {
             <div className="flex items-center justify-center">
               <div className="relative h-12 w-32">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bed-bath-beyond-seeklogo-eicHaGnNkNoCkD3RyliTumGU8ZMs9D.svg"
+                  src="/logos/bed-bath-beyond-logo.svg"
                   alt="Bed Bath & Beyond"
                   fill
                   className="object-contain brightness-0 invert"

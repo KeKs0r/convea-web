@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Info, Zap, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -16,7 +16,7 @@ import { CTAButton } from "./ui/cta-button";
 const menuItems = [
   { href: "#", label: "About", icon: Info },
   { href: "#", label: "Features", icon: Zap },
-  { href: "#", label: "Blog", icon: BookOpen },
+  { href: "/blog", label: "Blog", icon: BookOpen },
 ];
 
 export function Navbar() {
@@ -49,7 +49,7 @@ export function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <div className="flex items-center gap-2">
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/convea-MqcNsicQwpsRcxLDbfSm8jqcFIYp4Y.svg"
               alt="Convea.ai Logo"
@@ -60,7 +60,7 @@ export function Navbar() {
             <span className="ml-2 text-lg font-semibold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
               convea.ai
             </span>
-          </div>
+          </Link>
         </div>
         <div className="flex items-center gap-4">
           <NavigationMenu className="hidden md:block">
@@ -69,10 +69,11 @@ export function Navbar() {
                 <NavigationMenuItem key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors relative"
+                    className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-300 relative group/item py-2"
                   >
-                    {item.label}
-                    <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-[#FF4D8C] transform scale-x-0 hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                    <span className="relative z-10">{item.label}</span>
+                    <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-gradient-to-r from-[#FF4D8C] to-[#FF8FB1] transform origin-left scale-x-0 group-hover/item:scale-x-100 transition-transform duration-300 ease-out"></span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-pink-50 to-transparent opacity-0 group-hover/item:opacity-100 -z-10 rounded-lg transition-opacity duration-300 ease-out"></span>
                   </Link>
                 </NavigationMenuItem>
               ))}

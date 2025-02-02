@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Convea.ai - AI-Enhanced Email Marketing for Klaviyo",
   description:
     "Enhance your Klaviyo email flows with AI-driven smart triggers, personalized targeting, and sophisticated recommendations. No development work required.",
+  icons: {
+    icon: "/convea.svg",
+  },
   keywords: [
     "Klaviyo",
     "Email Marketing",

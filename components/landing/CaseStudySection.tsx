@@ -42,17 +42,19 @@ export default function CaseStudySection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="relative overflow-hidden rounded-3xl border-0 bg-white p-8 shadow-lg">
+            <Card className="relative overflow-hidden rounded-3xl border-0 bg-white p-8 shadow-lg group">
               <div
-                className={`absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br ${stat.color} opacity-20 blur-2xl`}
+                className={`absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br ${stat.color} opacity-20 blur-2xl transition-all duration-300 ease-in-out group-hover:opacity-30 group-hover:scale-110`}
               ></div>
               <div className="relative">
                 <p
-                  className={`mb-2 text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
+                  className={`mb-2 text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent transition-all duration-300 ease-in-out group-hover:scale-105`}
                 >
                   {stat.value}
                 </p>
-                <p className="text-gray-600">{stat.label}</p>
+                <p className="text-gray-600 transition-all duration-300 ease-in-out group-hover:text-gray-800">
+                  {stat.label}
+                </p>
               </div>
             </Card>
           </motion.div>

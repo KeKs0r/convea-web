@@ -1,5 +1,5 @@
-import ArticleCard from "@/components/ArticleCard";
-import Pagination from "@/components/Pagination";
+import { ArticleCard } from "@/components/blog/ArticleCard";
+import { Pagination } from "@/components/blog/Pagination";
 import { type Metadata } from "next";
 import Link from "next/link";
 import { BlogClient } from "seobot";
@@ -93,8 +93,8 @@ export default async function Tag({
       {lastPage > 1 && (
         <Pagination
           slug={`/blog/tag/${slug}`}
-          pageNumber={pageNumber}
-          lastPage={lastPage}
+          currentPage={pageNumber}
+          totalPages={lastPage}
         />
       )}
     </section>

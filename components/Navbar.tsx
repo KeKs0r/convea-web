@@ -49,13 +49,18 @@ export function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <div className="flex items-center gap-2">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/convea-MqcNsicQwpsRcxLDbfSm8jqcFIYp4Y.svg"
-            alt="Convea.ai Logo"
-            width={120}
-            height={32}
-            className="h-8 w-auto"
-          />
+          <div className="flex items-center">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/convea-MqcNsicQwpsRcxLDbfSm8jqcFIYp4Y.svg"
+              alt="Convea.ai Logo"
+              width={120}
+              height={32}
+              className="h-8 w-auto"
+            />
+            <span className="ml-2 text-lg font-semibold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+              convea.ai
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <NavigationMenu className="hidden md:block">

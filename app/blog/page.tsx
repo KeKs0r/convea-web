@@ -1,16 +1,22 @@
-import ArticleCard from "@/components/ArticleCard";
-import Pagination from "@/components/Pagination";
+import { ArticleCard } from "@/components/blog/ArticleCard";
+import { BlogHeroSection } from "@/components/blog/BlogHeroSection";
+import { CategoryList } from "@/components/blog/CategoryList";
+import { FeaturedArticles } from "@/components/blog/FeaturedArticles";
+import { categories, mockArticles } from "@/components/blog/mock-articles";
+import { Pagination } from "@/components/blog/Pagination";
+import { Navbar } from "@/components/Navbar";
+import Footer from "@/components/landing/Footer";
 import { type Metadata } from "next";
 import { BlogClient } from "seobot";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = "SeoBot Blog";
+  const title = "Convea.ai Blog";
   const description =
-    "Get the inside scoop on SeoBot - the AI-powered SEO solution for content creation, optimization, and automated traffic growth on Autopilot.";
+    "Explore the latest insights and strategies in email marketing with Convea.ai - your go-to resource for optimizing email campaigns and boosting engagement.";
   return {
     title,
     description,
-    metadataBase: new URL("https://seobotai.com"),
+    metadataBase: new URL("https://convea.ai"),
     alternates: {
       canonical: "/blog",
     },
@@ -19,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       // images: [],
-      url: "https://seobotai.com/blog",
+      url: "https://convea.ai/blog",
     },
     twitter: {
       title,
@@ -46,22 +52,46 @@ export const fetchCache = "force-no-store";
 export default async function Blog(props: {
   searchParams: Promise<{ page: number }>;
 }) {
-  const pageNumber = Math.max((await props.searchParams).page || 0, 0);
-  const { total, articles } = await getPosts(pageNumber);
-  const posts = articles || [];
-  const lastPage = Math.ceil(total / 10);
+  const currentPage = Math.max((await props.searchParams).page || 0, 0);
+  const { total, articles } = await getPosts(currentPage);
+  const posts = [...articles, ...mockArticles];
+  const totalPages = Math.ceil(total || posts.length / 10);
+
+  const featuredArticles = posts.slice(0, 5);
+  const regularArticles = posts.slice(5);
 
   return (
-    <section className="max-w-3xl my-8 lg:mt-10 mx-auto px-4 md:px-8 dark:text-white tracking-normal">
-      <h1 className="text-4xl my-4 font-black">SeoBot Blog</h1>
-      <ul>
-        {posts.map((article: any) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
-      </ul>
-      {lastPage > 1 && (
-        <Pagination slug="/blog" pageNumber={pageNumber} lastPage={lastPage} />
-      )}
-    </section>
+    <div className="min-h-screen flex flex-col relative">
+      <div className="absolute top-0 left-0 right-0 h-[800px] z-0">
+        <BlogHeroSection />
+      </div>
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <Navbar />
+      </div>
+      <div className="relative z-10 pt-16">
+        <div className="bg-white mt-40">
+          <div className="container mx-auto px-4 py-12">
+            <FeaturedArticles articles={featuredArticles} />
+          </div>
+        </div>
+
+        <main className="container mx-auto px-4 py-12">
+          <div className="mb-12">
+            <CategoryList categories={categories} activeCategory="all" />
+          </div>
+          <div className="space-y-12">
+            <section>
+              <div className="grid gap-8 sm:grid-cols-2">
+                {regularArticles.map((article) => (
+                  <ArticleCard key={article.id} article={article} />
+                ))}
+              </div>
+            </section>
+          </div>
+          <Pagination currentPage={currentPage + 1} totalPages={totalPages} />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 }

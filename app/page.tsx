@@ -1,7 +1,7 @@
 import HeroSection from "@/components/landing/HeroSection";
 import FlowDiagramSection from "@/components/landing/FlowDiagramSection";
 import ValuePropositionSection from "@/components/landing/ValuePropositionSection";
-import StatsSection from "@/components/landing/StatsSection";
+
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import FounderExperienceSection from "@/components/landing/FounderExperienceSection";
 import EnterpriseSuccessSection from "@/components/landing/EnterpriseSuccessSection";

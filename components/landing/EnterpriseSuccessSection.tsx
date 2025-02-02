@@ -84,11 +84,11 @@ export default function EnterpriseSuccessSection() {
             <div className="rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm text-white">
               Enterprise Ready
             </div>
-            <div className="rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm text-white">
+            {/* <div className="rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm text-white">
               SOC 2 Compliant
-            </div>
+            </div> */}
             <div className="rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm text-white">
-              99.9% Uptime SLA
+              99.99% Uptime SLA
             </div>
           </div>
         </div>

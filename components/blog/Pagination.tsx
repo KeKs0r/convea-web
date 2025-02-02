@@ -5,9 +5,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
+  slug: string;
 }
 
-export function Pagination({ currentPage, totalPages }: PaginationProps) {
+export function Pagination({ currentPage, totalPages, slug }: PaginationProps) {
   return (
     <div className="flex items-center justify-center space-x-6 py-8">
       <Button

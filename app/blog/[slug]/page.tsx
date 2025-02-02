@@ -5,7 +5,6 @@ import { BlogClient } from "seobot";
 
 import NotFound from "@/components/NotFound";
 import HighlightCode from "@/components/HighlightCode";
-import "../blog.css";
 
 async function getPost(slug: string) {
   const key = process.env.SEOBOT_API_KEY;

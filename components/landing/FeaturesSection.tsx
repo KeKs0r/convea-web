@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { CTAButton } from "../ui/cta-button";
 
 const features = [
   {
@@ -89,13 +90,10 @@ export default function FeaturesSection() {
             sophisticated automation workflows. No coding required – just
             describe what you want to achieve.
           </p>
-          <Button
-            size="lg"
-            className="rounded-full bg-[#FF4D8C] text-white hover:bg-[#FF4D8C]/90"
-          >
+          <CTAButton size="lg">
             Try AI Automation
             <Sparkles className="ml-2 h-4 w-4" />
-          </Button>
+          </CTAButton>
         </div>
       </Card>
     </section>

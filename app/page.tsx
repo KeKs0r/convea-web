@@ -8,19 +8,23 @@ import EnterpriseSuccessSection from "@/components/landing/EnterpriseSuccessSect
 import FAQSection from "@/components/landing/FAQSection";
 import Footer from "@/components/landing/Footer";
 import { Navbar } from "@/components/Navbar";
+import CaseStudySection from "@/components/landing/CaseStudySection";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f5f5f5]">
       <Navbar />
-      <HeroSection />
-      <FlowDiagramSection />
-      <FounderExperienceSection />
-      <ValuePropositionSection />
-      <FeaturesSection />
-
-      <EnterpriseSuccessSection />
-      <FAQSection />
+      <main className="relative overflow-hidden">
+        <HeroSection />
+        <FlowDiagramSection />
+        <FounderExperienceSection />
+        <ValuePropositionSection />
+        {/* <StatsSection /> */}
+        <FeaturesSection />
+        <CaseStudySection />
+        <EnterpriseSuccessSection />
+        <FAQSection />
+      </main>
       <Footer />
     </div>
   );

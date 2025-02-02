@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { motion, AnimatePresence } from "framer-motion";
+import { FAQAnswer } from "./FAQAnswer";
 
 const faqs = [
   {
@@ -50,18 +51,7 @@ export default function FAQSection() {
               <AccordionTrigger className="text-left text-xl font-bold">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent>
-                <AnimatePresence>
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    <p className="text-gray-600 pt-2">{item.answer}</p>
-                  </motion.div>
-                </AnimatePresence>
-              </AccordionContent>
+              <FAQAnswer answer={item.answer} />
             </AccordionItem>
           ))}
         </Accordion>

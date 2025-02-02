@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-24">
+    <section className="relative overflow-hidden pt-24 pb-32">
       <div className="absolute inset-0 bg-gradient-to-b from-purple-100/30 via-transparent to-transparent"></div>
       <div className="absolute -left-32 -top-32 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-purple-300/30 to-pink-300/30 blur-3xl"></div>
       <div className="absolute -right-32 top-0 h-[400px] w-[400px] rounded-full bg-gradient-to-br from-blue-300/30 to-purple-300/30 blur-3xl"></div>

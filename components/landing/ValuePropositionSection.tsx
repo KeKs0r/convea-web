@@ -18,26 +18,27 @@ export default function ValuePropositionSection() {
           <h2 className="text-4xl font-bold leading-tight lg:text-6xl">
             What if this would take you 5 minutes instead of weeks?
           </h2>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <Card className="relative overflow-hidden rounded-3xl border-0">
-              <div className="group relative aspect-[16/9] w-full overflow-hidden">
-                <Image
-                  src="/klaviyo-flow-overload-2.png"
-                  alt="Complex Flow"
-                  fill
-                  className="scale-100 transform object-cover brightness-110 transition-all duration-500 group-hover:scale-110 group-hover:blur-none"
-                />
-                <div className="absolute inset-0 bg-white/80 transition-opacity duration-500 group-hover:opacity-60"></div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card className="relative overflow-hidden rounded-3xl border-0 bg-black text-white">
+              <div className="group aspect-[16/9] w-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-q2H8TYxm3zXAjum8zyxzQyYas0jFAA.png"
+                    alt="Complex Flow"
+                    fill
+                    className="scale-90 transform object-contain opacity-25 transition-all duration-500 group-hover:scale-100 group-hover:opacity-40"
+                  />
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center p-6">
                   <div className="text-center">
-                    <h3 className="mb-4 text-2xl font-bold text-black">
+                    <h3 className="mb-4 text-2xl font-bold">
                       Traditional Setup
                     </h3>
-                    <p className="mb-4 text-lg text-gray-700">
+                    <p className="mb-4 text-lg text-gray-300">
                       Requires weeks of work with expensive consultants to
                       achieve sophisticated automation
                     </p>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <ul className="space-y-2 text-sm text-gray-400">
                       <li className="flex items-center justify-center">
                         <ClockIcon className="mr-2 h-4 w-4" />
                         Weeks of setup time
@@ -57,8 +58,8 @@ export default function ValuePropositionSection() {
             </Card>
 
             <Card className="relative overflow-hidden rounded-3xl border-0 bg-gradient-to-br from-purple-100 to-pink-100">
-              <div className="aspect-[16/9] w-full p-6">
-                <div className="flex h-full flex-col justify-between">
+              <div className="h-full w-full p-6">
+                <div className="flex h-full flex-col justify-between gap-8">
                   <div>
                     <h3 className="mb-4 text-2xl font-bold">
                       Convea.ai Solution
@@ -68,8 +69,8 @@ export default function ValuePropositionSection() {
                       25% with zero development effort
                     </p>
                   </div>
-                  <div className="grid gap-4 md:grid-cols-3">
-                    <div className="space-y-2">
+                  <div className="grid gap-6 grid-cols-1 sm:grid-cols-3">
+                    <div className="space-y-3 py-2">
                       <div className="flex items-center text-green-700">
                         <CheckCircleIcon className="mr-2 h-5 w-5" />
                         <h4 className="font-semibold">Install</h4>
@@ -79,7 +80,7 @@ export default function ValuePropositionSection() {
                       </p>
                       <p className="text-xl font-bold text-pink-500">5 mins</p>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-3 py-2">
                       <div className="flex items-center text-green-700">
                         <ActivityIcon className="mr-2 h-5 w-5" />
                         <h4 className="font-semibold">AI Analysis</h4>
@@ -87,7 +88,7 @@ export default function ValuePropositionSection() {
                       <p className="text-sm text-gray-600">Optimize flows</p>
                       <p className="text-xl font-bold text-pink-500">24 hrs</p>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-3 py-2">
                       <div className="flex items-center text-green-700">
                         <ZapIcon className="mr-2 h-5 w-5" />
                         <h4 className="font-semibold">Go Live</h4>
